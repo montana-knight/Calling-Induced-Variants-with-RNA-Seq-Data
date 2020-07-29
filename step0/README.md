@@ -1,6 +1,6 @@
 # Step 0 -- Collecting raw read data and quality control of the fastq files
 
-#### Tools used:
+### Tools used:
 
-*fastqc
-*fastx_trimmer
+* fastqc
+* fastx_trimmer
