@@ -1,1 +1,1 @@
-# Alignment Mapping
+# Step 1 -- Alignment mapping
