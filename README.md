@@ -1,3 +1,5 @@
+![NCSU Logo](https://brand.ncsu.edu/assets/logos/ncstate-brick-2x2-red.png)
+
 # Analyzing spaceflight data using an RNA-Seq pipeline.
 
 
