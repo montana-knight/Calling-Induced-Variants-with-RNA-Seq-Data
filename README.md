@@ -11,7 +11,7 @@ RNA-Seq data being used for variant discovery is not a new concept, however it i
 
 The general flow of the pipeline is as follows:
 
-## Step 0 -- Collecting raw read data and quality control of the fastq files
+## [Step 0 -- Collecting raw read data and quality control of the fastq files] (https://github.com/montana-knight/spaceflight-RNAseq/tree/master/step0)
 
 ## Step 1 -- Alignment mapping
 
