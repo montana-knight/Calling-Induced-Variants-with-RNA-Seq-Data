@@ -11,14 +11,14 @@ RNA-Seq data being used for variant discovery is not a new concept, however it i
 
 The general flow of the pipeline is as follows:
 
-## [Step 0 -- Collecting raw read data and quality control of the fastq files](https://github.com/montana-knight/spaceflight-RNAseq/tree/master/step0)
+### [Step 0 -- Collecting raw read data and quality control of the fastq files](https://github.com/montana-knight/spaceflight-RNAseq/tree/master/step0)
 
-## [Step 1 -- Alignment mapping](https://github.com/montana-knight/spaceflight-RNAseq/tree/master/step1)
+### [Step 1 -- Alignment mapping](https://github.com/montana-knight/spaceflight-RNAseq/tree/master/step1)
 
-## [Step 2 -- Quality control of the alignment files](https://github.com/montana-knight/spaceflight-RNAseq/tree/master/step2)
+### [Step 2 -- Quality control of the alignment files](https://github.com/montana-knight/spaceflight-RNAseq/tree/master/step2)
 
-## [Step 3 -- Initial Variant Discovery](https://github.com/montana-knight/spaceflight-RNAseq/tree/master/step3)
+### [Step 3 -- Initial Variant Discovery](https://github.com/montana-knight/spaceflight-RNAseq/tree/master/step3)
 
-## [Step 4 -- Quality control of the variant call files](https://github.com/montana-knight/spaceflight-RNAseq/tree/master/step4)
+### [Step 4 -- Quality control of the variant call files](https://github.com/montana-knight/spaceflight-RNAseq/tree/master/step4)
 
-## [Step 5 -- Statistical and biological analysis of filtered variants](https://github.com/montana-knight/spaceflight-RNAseq/tree/master/step5)
+### [Step 5 -- Statistical and biological analysis of filtered variants](https://github.com/montana-knight/spaceflight-RNAseq/tree/master/step5)
