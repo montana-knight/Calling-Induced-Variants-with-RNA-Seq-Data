@@ -17,7 +17,7 @@ The general flow of the pipeline is as follows:
 
 ## Step 2 -- Quality control of the alignment files
 
-## Step 3 -- Variant calling
+## Step 3 -- Initial Variant Discovery
 
 ## Step 4 -- Quality control of the variant call files
 
