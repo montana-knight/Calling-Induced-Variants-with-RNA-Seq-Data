@@ -13,4 +13,4 @@ Fastqc generates a report based on read quality. After loading the raw fastq fil
 
 When I ran fastqc on my raw fastq files, I noticed a warning would pop up on all of the "Per Base Sequence Content" tabs. The corresponding graph looked like this:
 
-![Image of Per Base Sequence Content] (https://github.com/montana-knight/spaceflight-RNAseq/edit/master/step0/images/FASTQC%20--%20Leftside%20index.png)
+![Image of Per Base Sequence Content] (step0/images/FASTQC -- Per base nucleotide.png)
