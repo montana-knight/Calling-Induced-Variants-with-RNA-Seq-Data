@@ -11,6 +11,8 @@ Fastqc generates a report based on read quality. After loading the raw fastq fil
 
 ![Image of FASTQC Lefthand index](https://github.com/montana-knight/spaceflight-RNAseq/blob/master/step0/images/FASTQC%20--%20Leftside%20index.png)
 
+Intuitively, the green circles with an inserted checkmark indicate the reads easily fufill the corresponding quality check, the yellow circles with an exclamation mark are a warning for the corresponding quality check, and the red with the "x" indicates bad quality. In the above image the sequence duplication level was the main issue for the quality report (typical with RNA-Seq data, even more typical with plant expression data since plants produce A LOT of photosynthesis related RNA on a daily basis).
+
 #### Step 0.2 -- Trimming 
 
 When I ran fastqc on my raw fastq files, I noticed a warning would pop up on all of the "Per Base Sequence Content" tabs. The corresponding graph looked like this:
