@@ -7,10 +7,16 @@
 
 #### Step 0.1 -- Loading raw fastq reads and checking their quality via **fastqc**
 
-Fastqc generates a report based on read quality. After loading the raw fastq files, run them through fastqc in order to see what kinds of quality control measures you need to take. Generally reads need to be trimmed and low quality reads filtered out, but the fastqc report may also alert you to other issues in your file.
+Fastqc generates a report based on read quality. After loading the raw fastq files, run them through fastqc in order to see what kinds of quality control measures you need to take. Generally reads need to be trimmed and low quality reads filtered out, but the fastqc report may also alert you to other issues in your file. This is an example of what the left-hand index will look like for the fastqc produced html quality report:
+
+![Image of FASTQC Lefthand index](https://github.com/montana-knight/spaceflight-RNAseq/blob/master/step0/images/FASTQC%20--%20Leftside%20index.png)
 
 #### Step 0.2 -- Trimming 
 
 When I ran fastqc on my raw fastq files, I noticed a warning would pop up on all of the "Per Base Sequence Content" tabs. The corresponding graph looked like this:
 
 ![Image of Per Base Sequence Content](https://github.com/montana-knight/spaceflight-RNAseq/blob/master/step0/images/FASTQC%20--%20Per%20base%20nucleotide.png)
+
+This indicates the first thirteen or so bases should likely be trimmed from each of the reads. I also trimmed the last three nucleotides as well. Reads were trimmed using fastx_trimmer, and there are other tools out there that can trim reads as well. After trimming, be sure to run the trimmed reads through fastqc again to continuously check on quality.
+
+#### Step 0.3 -- Quality Filtering
