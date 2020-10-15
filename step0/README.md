@@ -21,4 +21,10 @@ When I ran fastqc on my raw fastq files, I noticed a warning would pop up on all
 
 This indicates the first thirteen or so bases should likely be trimmed from each of the reads. I also trimmed the last three nucleotides as well. Reads were trimmed using fastx_trimmer, and there are other tools out there that can trim reads as well. After trimming, be sure to run the trimmed reads through fastqc again to continuously check on quality.
 
+You may have other issues which require trimming, for example leftover adapter sequences.
+
 #### Step 0.3 -- Quality Filtering
+
+I filtered based on quality score, keeping those which have scores more than or equal to 30. 
+
+*Note: Quality control of raw reads is very much a case to case basis. Start with your fastqc to see what warnings come up. If you aren't sure what to do with an error/warning, take to google because someone else has probably had the question before.*
