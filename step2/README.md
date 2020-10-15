@@ -54,7 +54,7 @@ Mutect2 is GATK's somatic variant caller. It is typically reserved to find somat
 
 We created an R script which combines the the two panels of normals created from HaplotypeCaller and Mutect2 (above). The script produces a new variant call file that has any variant which was called by either tool. 
 
-The output file needs to have an appropriate header, I used the header from the previous Mutect2 output. You then need to index this new vcf file with GATK's _IndexFeatureFile_ tool.
+The output file needs to have an appropriate header, I used the header from the previous Mutect2 output. You then need to index this new vcf file with GATK's *_IndexFeatureFile_* tool.
 
 ### Base Recalibration (BaseRecalibrator + ApplyBQSR)
 
