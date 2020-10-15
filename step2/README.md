@@ -38,6 +38,7 @@ GATK's SplitNCigarReads reassesses nucleotides surrounding splice sites and is a
 
 *All of the steps before Base Recalibration are to create the Ultimate Panel of Normals*
 
+##
 ## Creating the Ultimate Panel of Normals
 
 ### HaplotypeCaller + GenomicsDBImport + GenotypeGVCFs + CreateSomaticPanelOfNormals
@@ -63,4 +64,5 @@ The output file needs to have an appropriate header, I used the header from the 
 
 The last quality control step utilized in this pipeline is Base Recalibration. Base recalibration adjust base quality scores based on read group, reported quality scores, machine cyle, and potential dinucleotide errors. Two GATK tools (BaseRecalibrator and ApplyBQSR) are needed to do the base recalibration. BaseRecalibrator looks at all of the bases mapped and builds a model to adjust the base quality scores. It is the tool which needs the panel of normals to fufill the known-sites requirement. ApplyBQSR is then called to take the model created by BaseRecalibrator and actually do the adjustments.
 
+##
 *Note: There is also a tool called MergeBamAlignment from Picard which you may want to use. It will merge the mapped and unmapped reads in a file. We didn't do it in this case just because Arabidopsis is very well annotated and we had a high mapping rate.*
