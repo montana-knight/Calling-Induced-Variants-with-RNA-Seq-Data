@@ -29,7 +29,7 @@ This is only a necessary step due to the sequential use of GATK. GATK (and some 
 
 ### GATK's SplitNCigarReads
 
-![SplitNCigarReads Elimination Process,  https://discussions4562.rssing.com/chan-67237868/all_p81.html#c67237868a1602i1254726666(https://github.com/montana-knight/spaceflight-RNAseq/blob/master/step2/images/d400461fa1673ce50603487714be76.png)
+![SplitNCigarReads Elimination Process,  https://discussions4562.rssing.com/chan-67237868/all_p81.html#c67237868a1602i1254726666 (https://github.com/montana-knight/spaceflight-RNAseq/blob/master/step2/images/d400461fa1673ce50603487714be76.png)
 
 ### GATK's BaseRecalibrator + ApplyBQSR
 
