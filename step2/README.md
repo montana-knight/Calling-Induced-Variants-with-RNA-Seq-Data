@@ -54,10 +54,10 @@ Mutect2 is GATK's somatic variant caller. It is typically reserved to find somat
 
 We created an R script which combines the the two panels of normals created from HaplotypeCaller and Mutect2 (above). The script produces a new variant call file that has any variant which was called by either tool. 
 
-The output file needs to have an appropriate header, I used the header from the previous Mutect2 output. You then need to index this new vcf file with GATK's *_IndexFeatureFile_* tool.
+The output file needs to have an appropriate header, I used the header from the previous Mutect2 output. You then need to index this new vcf file with GATK's **IndexFeatureFile** tool.
 
 ### Base Recalibration (BaseRecalibrator + ApplyBQSR)
 
-
+The last quality control step utilized in this pipeline is Base Recalibration. Base recalibration adjust base quality scores based on read group, reported quality scores, machine cyle, and potential dinucleotide errors. Two GATK tools (BaseRecalibrator and ApplyBQSR) are needed to do the base recalibration. BaseRecalibrator looks at all of the bases mapped and builds a model to adjust the base quality scores. ApplyBQSR is then called to take the model created by BaseRecalibrator and actually do the adjustments.
 
 *Note: There is also a tool called MergeBamAlignment from Picard which you may want to use. It will merge the mapped and unmapped reads in a file. We didn't do it in this case just because Arabidopsis is very well annotated and we had a high mapping rate.*
