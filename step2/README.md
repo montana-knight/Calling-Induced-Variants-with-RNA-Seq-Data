@@ -34,11 +34,29 @@ This is only a necessary step due to the sequential use of GATK. GATK (and some 
 
 GATK's SplitNCigarReads reassesses nucleotides surrounding splice sites and is an essential step in calling variants from RNA-Seq data. Reads will be split up based on the parts of the read that map before an intron (N) and after (N). Overhangs in intronic regions will then be clipped. This will eliminate any variants which otherwise would have been falsely called in these regions.
 
+*Note: We aren't done with BAM QC processing, however, one of the following steps (base recalibration) requires a "known-sites" input. This is possible for species who have known-sites databases (humans), but not for Arabidopsis which is what we used. GATK's work around is to create a somatic panel of normals. They suggest running Mutect2 on the data without base recalibration, obtaining a PON using the CreateSomaticPanelOfNormals tool, and then using that PON to run the alignment files through base recalibration. We will use Mutect2 to do this, but we will also use HaplotypeCaller in joint genotyping mode. This is a workflow which has been shown to work well at identifying variants in RNA-Seq data, so it is of great interest to us. After we run both HaplotypeCaller and Mutect2, we will combine the two different Panels of Normal to create the "Ultimate Panel of Normals". The output of HaplotypeCaller and Mutect2 should have a lot of overlap, but using mutations called by either/or should help combat the high false discovery rate which is associated with using RNA-Seq data for variant calling.*
+
+*All of the steps before Base Recalibration are to create the Ultimate Panel of Normals*
+
+## Creating the Ultimate Panel of Normals
+
 ### HaplotypeCaller + GenomicsDBImport + GenotypeGVCFs + CreateSomaticPanelOfNormals
 
-HaplotypeCaller is GATK's germline variant caller. This tool has a joint genotyping workflow option which has show to work with RNA-Sequencing data to call appropriate variants (REF). We are not interested in calling germline variants in this workflow, we are interested in calling somatic variants HOWEVER in order to do that we will need to utilize a Somatic Panel Of Normals. 
+HaplotypeCaller is GATK's germline variant caller. This tool has a joint genotyping workflow option which has show to work with RNA-Sequencing data to call appropriate variants (REF). We are not interested in calling germline variants in this workflow, we are interested in calling somatic variants. We could possibly use HaplotypeCaller to do this, but the tool doesn't do very well at calling singleton mutations which is what we are the most interested in. But HaplotypeCaller in joint genotyping mode could be used to create a Somatic Panel Of Normals. We want a good Panel of Normals (PON) so that any mutations occuring in the line of Arabidopsis being used by any given lab (that would be identified due to their difference from the reference genome) can be accounted for and not counted as novel variants.
 
-### BaseRecalibrator + ApplyBQSR
+The first step in this joint genotyping workflow is to run HaplotypeCaller on all the samples. Then GenomicsDBImport will take all of those variant call files produced by HaplotypeCaller and merge them into a database easily accessible for sequential tools. Next, GenotypeGVCFs is used to do the joint genotyping on all of the variant call files. GenotypeGVCFs will examine these files and output a joint genotype vcf files with all the samples and their re-adjusted calls. Finally, CreateSomaticPanelOfNormals will be called. This tool will examine all of the re-adjusted calls from the joint genotyping pipeline and call any mutations which are occuring in multiple samples.
+
+### Mutect2 + GenomicsDBImport + CreateSomaticPanelOfNormals
+
+Mutect2 is GATK's somatic variant caller. It is typically reserved to find somatic variants accumulating in tumor samples. There are a few modes it can be ran in, one of which is tumor only. This mode is for when you have only tumor tissue samples. You can compare these samples to the reference genome and can also utilize a somatic panel of normals. If you don't already have one you can create a somatic panel of normals by running Mutect2 on all of your samples, combining them into a database using GenomicsDBImport, and then calling CreateSomaticPanelOfNormals on that database. This is a very similar process to the above HaplotypeCaller workflow, but there isn't any joint genotyping.
+
+### Create the Ultimate PanelofNormals (Custom R Script)
+
+We created an R script which combines the the two panels of normals created from HaplotypeCaller and Mutect2 (above). The script produces a new variant call file that has any variant which was called by either tool. 
+
+The output file needs to have an appropriate header, I used the header from the previous Mutect2 output. You then need to index this new vcf file with GATK's _IndexFeatureFile_ tool.
+
+### Base Recalibration (BaseRecalibrator + ApplyBQSR)
 
 
 
