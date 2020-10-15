@@ -29,7 +29,7 @@ This is only a necessary step due to the sequential use of GATK. GATK (and some 
 
 ### GATK's SplitNCigarReads
 
-
+![SplitNCigarReads Elimination Process]()
 
 ### GATK's BaseRecalibrator + ApplyBQSR
 
