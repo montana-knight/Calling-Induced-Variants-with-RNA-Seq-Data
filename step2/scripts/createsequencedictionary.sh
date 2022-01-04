@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gatk CreateSequenceDictionary -R ~/TAIR10_chr_all.fasta
+gatk CreateSequenceDictionary -R ~/genome.fasta
 
 # -R is the reference file, the genome in fasta format
 
