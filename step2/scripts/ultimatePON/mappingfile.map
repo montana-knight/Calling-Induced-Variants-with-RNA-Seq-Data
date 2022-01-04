@@ -1,0 +1,7 @@
+sample1      path/to/sample1.vcf.gz
+sample2      path/to/sample2.vcf.gz
+sample3      path/to/sample3.vcf.gz
+
+
+### don't include comments or anything but basically this mapping file is needed for genomicsdbimport. It tells the tool the name of your samples and where
+### to find them (the path to find them). This will label columns in the output file.
