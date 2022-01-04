@@ -14,6 +14,8 @@
 * GATK's IndexFeatureFile
 * GATK's BaseRecalibrator + ApplyBQSR
 
+## Do these in order.
+
 ### CreateSequenceDictionary
 
 The genome's fasta file needs to have a dictionary file in order for the fasta to be read by further GATK tools. Using Picard's CreateSequenceDictionary will create a .dict file in the same directory as your fasta file.
