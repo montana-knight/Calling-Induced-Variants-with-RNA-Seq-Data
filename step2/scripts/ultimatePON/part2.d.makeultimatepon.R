@@ -62,28 +62,6 @@ toMatch <- c("FRACTION=1.00", "FRACTION=0.400", "FRACTION=0.300", "FRACTION=0.50
 
 all_snps_called_across_methods <- filter(all_snps_called_across_methods,grepl(paste(toMatch,collapse="|"),V8)) # filter out any variants in the full combined
                                                                                                                # pon df
-
 print(nrow(all_snps_called_across_methods))
-
-all_snps_called_across_methods <- uniq_to_hapcall
-
-all_snps_called_across_methods <- all_snps_called_across_methods %>% arrange(V1,V2)
-
-toMatch <- c("FRACTION=1.00", "FRACTION=0.400", "FRACTION=0.300", "FRACTION=0.500", "FRACTION=0.600", "FRACTION=0.700", "FRACTION=0.800", "FRACTION=0.900")
-
-all_snps_called_across_methods <- filter(all_snps_called_across_methods,grepl(paste(toMatch,collapse="|"),V8))
-
-print(nrow(all_snps_called_across_methods))
-
-all_snps_called_across_methods <- uniq_to_mutect
-
-all_snps_called_across_methods <- all_snps_called_across_methods %>% arrange(V1,V2)
-
-toMatch <- c("FRACTION=1.00", "FRACTION=0.400", "FRACTION=0.300", "FRACTION=0.500", "FRACTION=0.600", "FRACTION=0.700", "FRACTION=0.800", "FRACTION=0.900")
-
-all_snps_called_across_methods <- filter(all_snps_called_across_methods,grepl(paste(toMatch,collapse="|"),V8))
-
-print(nrow(all_snps_called_across_methods))
-
 
 #write.table(all_snps_called_across_methods, file="all_snps_called.tsv", sep="\t", quote=FALSE, row.names = FALSE, col.names = FALSE)
