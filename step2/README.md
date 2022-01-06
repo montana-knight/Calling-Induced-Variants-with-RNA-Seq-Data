@@ -42,6 +42,8 @@ GATK's SplitNCigarReads reassesses nucleotides surrounding splice sites and is a
 
 ## Creating the Ultimate Panel of Normals
 
+*Creating an Ultimate PON is necessary/helpful if you do not already have a list of known mutations for your samples.*
+
 ### HaplotypeCaller + GenomicsDBImport + GenotypeGVCFs + CreateSomaticPanelOfNormals
 
 HaplotypeCaller is GATK's germline variant caller. This tool has a joint genotyping workflow option which has show to work with RNA-Sequencing data to call appropriate variants (REF). We are not interested in calling germline variants in this workflow, we are interested in calling somatic variants. We could possibly use HaplotypeCaller to do this, but the tool doesn't do very well at calling singleton mutations which is what we are the most interested in. But HaplotypeCaller in joint genotyping mode could be used to create a Somatic Panel Of Normals. We want a good Panel of Normals (PON) so that any mutations occuring in the line of Arabidopsis being used by any given lab (that would be identified due to their difference from the reference genome) can be accounted for and not counted as novel variants.
