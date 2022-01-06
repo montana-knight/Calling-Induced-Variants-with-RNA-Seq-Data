@@ -25,6 +25,9 @@ mutect2_pon <- read.table(file="mutect2_pon.vcf") # replace filename with your m
 
 `%notin%` <- Negate(`%in%`) # creats a "not in" tool which will do the opposite of the in function
 
+## note: V1 - first column, V2 - second column, ... if they're called something else for you then rename appropriately
+## or just do [,1] or [,2] or whatever
+
 if(nrow(hapcall_pon) > nrow(mutect2_pon)){ # to find calls in both the haplotype caller pon and the mutect2 vcf
                                            # i did it this way so that the larger pon file would look for calls
                                            # in the smaller one. I don't think it actually matters and either way
