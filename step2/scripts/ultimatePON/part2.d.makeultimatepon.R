@@ -54,7 +54,7 @@ all_snps_called_across_methods <- all_snps_called_across_methods %>% arrange(V1,
 ### now lets pull out variants which are more likely to be germline mutations.
 # i defined this as needing to be identified in at least 3/10 samples (Fraction=0.300)
 # i only had ten samples per group so the fractions were super easy (1.000 means all of them, 0.5000 means half, etc...) 
-# but if you have a different number of samples that was used to build your pons then your fractions will be different
+# but if you have a different number of samples that was used to build your pons then YOUR FRACTIONS WILL BE DIFFERENT
 # also i wanted to only call variants present in 3 or more samples, but if you want to use
 # any variants called as a variant in the pon then go for it!
 
@@ -62,6 +62,10 @@ toMatch <- c("FRACTION=1.00", "FRACTION=0.400", "FRACTION=0.300", "FRACTION=0.50
 
 all_snps_called_across_methods <- filter(all_snps_called_across_methods,grepl(paste(toMatch,collapse="|"),V8)) # filter out any variants in the full combined
                                                                                                                # pon df
-print(nrow(all_snps_called_across_methods))
 
-#write.table(all_snps_called_across_methods, file="all_snps_called.tsv", sep="\t", quote=FALSE, row.names = FALSE, col.names = FALSE)
+# print(nrow(all_snps_called_across_methods)) # to show you the number of variants you have in this "ultimate pon" you created
+
+write.table(all_snps_called_across_methods, file="ultimate_pon_filename.tsv", sep="\t", quote=FALSE, row.names = FALSE, col.names = FALSE) # to save the 
+                                                                                                                                           # ultimate pon
+                                                                                                                                           # call this whatever 
+                                                                                                                                           # you want
