@@ -11,3 +11,5 @@ Opt for your favorite variant caller. There are a lot out there. We used Mutect2
 Call variants on each of your quality control checked alignment files.
 
 Mutect2 is typically used on tumor tissue samples to identify somatic mutations that have accumulated within the tumor.
+
+https://gatk.broadinstitute.org/hc/en-us/articles/360037593851-Mutect2
