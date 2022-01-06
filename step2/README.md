@@ -15,6 +15,7 @@
 * GATK's BaseRecalibrator + ApplyBQSR
 
 ## Do these in order.
+#### You will need to run these tools on each of the alignment files. (Note, during the creating the ultimate PON steps, you will be combining some of the files, but in general the QC tools will be ran separate times for separate alignment files).
 
 ### CreateSequenceDictionary
 
