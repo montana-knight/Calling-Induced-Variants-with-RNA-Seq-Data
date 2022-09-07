@@ -9,6 +9,8 @@ Here, we outline a toolbox of publicly available software and new custom scripts
 
 RNA-Seq data being used for variant discovery is not a new concept, however it is associated with a **high false discovery rate**. This is due to the additional reverse transcription step before PCR, the complexity in splice junction sites and alignment mapping, and RNA editing. This pipeline proposes ways to address these issues in order to have **informative and appropriate analysis**.
 
+Most of the following tools are from popular software like STAR or GATK. However, in Step 4 you will see a few custom scripts we suggest using to help combat the number of high false variant calls. 
+
 ### **The general flow of the pipeline is as follows:**
 
 #### [Step 0 -- Collecting raw read data and quality control of the fastq files](https://github.com/montana-knight/spaceflight-RNAseq/tree/master/step0)
