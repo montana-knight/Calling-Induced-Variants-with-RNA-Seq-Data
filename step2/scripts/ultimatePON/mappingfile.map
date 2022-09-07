@@ -5,3 +5,5 @@ sample3      path/to/sample3.vcf.gz
 
 ### don't include comments or anything but basically this mapping file is needed for genomicsdbimport. It tells the tool the name of your samples and where
 ### to find them (the path to find them). This will label columns in the output file.
+
+# you will have 2 mapping files, for your mutect2 and haplotype calls
