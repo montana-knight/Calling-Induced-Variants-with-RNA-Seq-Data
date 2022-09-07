@@ -61,6 +61,8 @@ all_snps_called_across_methods <- all_snps_called_across_methods %>% arrange(V1,
 # also i wanted to only call variants present in 3 or more samples, but if you want to use
 # any variants called as a variant in the pon then go for it!
 
+# the next line is a list of fraction you are interested in to call the genotypes in your PON. Note, fractions will be different for you!
+
 toMatch <- c("FRACTION=1.00", "FRACTION=0.400", "FRACTION=0.300", "FRACTION=0.500", "FRACTION=0.600", "FRACTION=0.700", "FRACTION=0.800", "FRACTION=0.900") # all of the fractions
 
 all_snps_called_across_methods <- filter(all_snps_called_across_methods,grepl(paste(toMatch,collapse="|"),V8)) # filter out any variants in the full combined
