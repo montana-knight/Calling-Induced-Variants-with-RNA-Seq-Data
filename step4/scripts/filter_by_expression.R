@@ -1,10 +1,5 @@
 #!/usr/bin/Rscript
 
-
-
-
-
-_genes <- read.table("gene_hotspot_table.txt") # read in your variants and their corresponding genes
 count_data <- dir(pattern="htseq/*htseq.results") # you have to run htseq on your alignment files and get count information to be able to run this script
 
 qc_vcf_filenames <- dir(pattern="qc") # import all of the variant call files that were filtered by tricky reads
