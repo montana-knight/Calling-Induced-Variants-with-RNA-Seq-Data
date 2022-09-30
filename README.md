@@ -1,6 +1,6 @@
 ![NCSU Logo](https://brand.ncsu.edu/assets/logos/ncstate-brick-4x1-red-min.png)
 
-# Analyzing spaceflight data using an RNA-Seq pipeline.
+# Somatic Variant Calling in a Highly Inbred Species with RNA-Seq Data
 
 
 **Gene expression data** is one of the most common biological data types collected. It's incredibly informative, and now can have nucleotide level information thanks to Next Generation Sequencing (NGS) technolgy's **RNA-Seq**. Oftentimes labs opt to do RNA-Seq data because they value gene expression information over other biological information. This makes finding **new "alternative" uses for RNA-Seq data** (besides just gene expression) that much more interesting.
